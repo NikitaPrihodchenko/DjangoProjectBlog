@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load thumbnail %}
+{% block main %}
+
+<h2>Your cart</h2>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+    </tr>
+    {% for item in cart %}
+    <tr>
+        <td>{{item.product.title}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.total_price}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>Total:</td>
+        <td>UAH {{ cart.get_total_price }}</td>
+        <td><a href="{% url 'orders:order_create' %}">Confirm order</a></td>
+    </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load thumbnail %}
+{% block main %}
+
+<h1 class="page-header"> Product detail </h1>
+
+<div class="card">
+  <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+  <div class="card-body">
+      <h2>{{ product.title }}</h2>
+      <h2>{{ product.price }}</h2>
+    <p class="card-text">{{ product.content }}</p>
+      <a href="{% url 'cart:cart_add' product.id %}" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+{% endblock %}

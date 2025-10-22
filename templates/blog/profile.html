@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block main %}
+<div class="container mt-5">
+  <h3>Мій профіль</h3>
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Ім’я користувача:</strong> {{ user.username }}</li>
+    <li class="list-group-item"><strong>Email:</strong> {{ user.email }}</li>
+    <li class="list-group-item"><strong>Дата приєднання:</strong> {{ user.date_joined|date:"d.m.Y" }}</li>
+  </ul>
+</div>
+{% endblock %}
